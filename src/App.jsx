@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
+import Menu from "@/components/menu";
 
 function App() {
   return (
-    <main className="flex flex-col gap-4">
-      <Outlet />
-    </main>
+    <>
+      <Menu />
+      <main className="flex flex-col mx-auto gap-4">
+        <Outlet />
+      </main>
+    </>
   );
 }
 
