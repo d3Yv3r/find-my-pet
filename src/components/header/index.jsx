@@ -1,9 +1,17 @@
 import { CiUser } from "react-icons/ci";
 import { MdOutlinePets } from "react-icons/md";
 import logoName from "@/assets/images/logo_name.svg";
-import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { SignInModal } from "./components/SignInModal";
 
 export default function Header() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <header className="flex justify-center bg-secondary-200 py-4 px-8">
@@ -23,15 +31,15 @@ export default function Header() {
                 </div>
               </MenuButton>
               <MenuList>
-                <MenuItem>Sign In</MenuItem>
-                <MenuItem onClick={() => console.log("Abriu Sign Up")}>
-                  Sign Up
-                </MenuItem>
+                <MenuItem onClick={onOpen}>Sign In</MenuItem>
+                <MenuItem>Sign Up</MenuItem>
               </MenuList>
             </Menu>
           </div>
         </div>
       </header>
+
+      <SignInModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 }
