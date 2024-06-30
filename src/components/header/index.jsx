@@ -8,7 +8,7 @@ import {
   MenuList,
   useDisclosure,
 } from "@chakra-ui/react";
-import { SignInModal } from "./components/SignInModal";
+import { SignInModal } from "@/containers/SignInModal";
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();

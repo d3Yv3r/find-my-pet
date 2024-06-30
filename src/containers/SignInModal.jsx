@@ -1,4 +1,5 @@
-import { ModalWrap } from "../../modal";
+import { ModalWrap } from "@/components/modal";
+import { Button } from "@/components/common/form";
 
 export const SignInModal = ({ isOpen, onClose }) => {
   return (
@@ -6,8 +7,12 @@ export const SignInModal = ({ isOpen, onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
       title="Bem-vindo de Volta!"
-      hasValidation
       textButton="Entrar"
+      footerChildren={
+        <>
+          <Button text="Entrar" disabled />
+        </>
+      }
     >
       <form action="" onSubmit={() => {}} className="flex flex-col gap-4">
         <div className="flex flex-col w-full gap-2">
@@ -16,7 +21,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
             type="email"
             name="email"
             placeholder="Ex.: joao@email.com"
-            className="border border-black rounded p-2"
+            className="border border-secondary-200 rounded p-3"
           />
         </div>
         <div className="flex flex-col w-full gap-2">
